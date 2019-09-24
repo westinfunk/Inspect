@@ -4,7 +4,7 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import MainTabNavigator from './MainTabNavigator';
 import AuthNavigator from './AuthNavigator';
 import AuthLoadingScreen from '../screens/AuthLoadingScreen';
-import CurrentScreen from '../screens/SignupScreen';
+import CurrentScreen from '../screens/HistoryScreen';
 
 export default createAppContainer(
   createSwitchNavigator({
