@@ -7,72 +7,98 @@ import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
+import HistoryScreen from '../screens/HistoryScreen';
+import InspectionSummaryScreen from '../screens/InspectionSummaryScreen';
+
+import TemplatesScreen from '../screens/TemplatesScreen';
+import ProfileScreen from '../screens/ProfileScreen';
+
+
 const config = Platform.select({
   web: { headerMode: 'screen' },
   default: {},
 });
 
-const HomeStack = createStackNavigator(
+// const HomeStack = createStackNavigator(
+//   {
+//     Home: HomeScreen,
+//   },
+//   config
+// );
+
+const HistoryStack = createStackNavigator(
   {
-    Home: HomeScreen,
-  },
-  config
-);
+    History: HistoryScreen,
+    InspectionSummary: InspectionSummaryScreen
+  }
+)
 
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={
-        Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
-      }
-    />
-  ),
-};
-
-HomeStack.path = '';
-
-const LinksStack = createStackNavigator(
+const ProfileStack = createStackNavigator(
   {
-    Links: LinksScreen,
-  },
-  config
-);
+    Profile: ProfileScreen
+  }
+)
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
-  ),
-};
-
-LinksStack.path = '';
-
-const SettingsStack = createStackNavigator(
+const NewInspectionStack = createStackNavigator(
   {
-    Settings: SettingsScreen,
-  },
-  config
-);
+    Templates: TemplatesScreen
+  }
+)
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
-  ),
-};
+// HomeStack.navigationOptions = {
+//   tabBarLabel: 'Home',
+//   tabBarIcon: ({ focused }) => (
+//     <TabBarIcon
+//       focused={focused}
+//       name={
+//         Platform.OS === 'ios'
+//           ? `ios-information-circle${focused ? '' : '-outline'}`
+//           : 'md-information-circle'
+//       }
+//     />
+//   ),
+// };
 
-SettingsStack.path = '';
+// HomeStack.path = '';
+
+// const LinksStack = createStackNavigator(
+//   {
+//     Links: LinksScreen,
+//   },
+//   config
+// );
+
+// LinksStack.navigationOptions = {
+//   tabBarLabel: 'Links',
+//   tabBarIcon: ({ focused }) => (
+//     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
+//   ),
+// };
+
+// LinksStack.path = '';
+
+// const SettingsStack = createStackNavigator(
+//   {
+//     Settings: SettingsScreen,
+//   },
+//   config
+// );
+
+// SettingsStack.navigationOptions = {
+//   tabBarLabel: 'Settings',
+//   tabBarIcon: ({ focused }) => (
+//     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+//   ),
+// };
+
+// SettingsStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
-  HomeStack,
-  LinksStack,
-  SettingsStack,
+  HistoryStack,
+  NewInspectionStack,
+  ProfileStack
 });
 
-tabNavigator.path = '';
+// tabNavigator.path = '';
 
 export default tabNavigator;

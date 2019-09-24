@@ -1,20 +1,18 @@
-import { setTimeout } from "timers"
-
-const getInspections = function() {
-
+export const getInspections = async function() {
+    return inspections;
 }
 
-const getInspection = async function(inspectionId) {
-     await setTimeout(400);
-     const inspection = inspections.filter((inspection) => inpsectionId == inspection.id)[0];
-     return inspection ? inspection : null;
+export const getInspection = async function(inspectionId) {
+     const inspection = inspections.filter((inspection) => inpsectionId == inspection.id);
+     return inspection.length ? inspection[0] : null;
 }
+
 
 
 const inspections = [
     { 
         id: 1,
-        address: "1234 Butt drive",
+        address: "9878 First Street",
         city: "Orem",
         state: "UT",
         summary: "This is a summarry of the inspection",

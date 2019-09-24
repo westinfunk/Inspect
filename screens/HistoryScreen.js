@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, Text } from 'react-native';
 import { Header, SearchBar, ListItem } from 'react-native-elements';
-
+import { getInspections } from '../model/Inspection';
 
 const HistoryHeader = props => <Header
     centerComponent={{ text: 'History', style: { color: '#fff' } }}
@@ -16,11 +16,31 @@ const HistorySearch = props =>  <SearchBar
 
 export default class HistoryScreen extends Component {
     state = {
+        isLoading: true,
         search: "",
+        inspections: []
+    }
+
+    async componentDidMount() {
+        try {
+            const inspections = await getInspections();
+            this.setState({
+                isLoading: false,
+                inspections: inspections
+            })
+        } catch(err) {
+            console.log(err);
+        }
     }
 
     updateSearch = search => {
         this.setState({ search })
+    }
+
+    navToInspectionSummary = (id)=> {
+        return function(){
+            console.log(id)
+        }
     }
         
     render() {
@@ -29,13 +49,13 @@ export default class HistoryScreen extends Component {
                 <HistoryHeader />
                 <HistorySearch onChangeText={this.updateSearch} value={ this.state.search }/>
                 <ScrollView>
-                    {reports.map((report, key) => 
+                    {this.state.inspections.map((inspection, key) => 
                         <ListItem 
                         key={key}
                         leftIcon={{ name: "home"}}
-                        title={report.address}
-                        subtitle={report.city}
-                        onPress={}
+                        title={inspection.address}
+                        subtitle={inspection.city}
+                        onPress={this.navToInspectionSummary(inspection.id)}
                         />)}
                 </ScrollView>
             </View>
