@@ -5,5 +5,8 @@ export default StyleSheet.create({
         flex: 1,
         paddingTop: 50,
         backgroundColor: '#fff'
+    },
+    buttonLarge: {
+        marginTop: 30
     }
 })
