@@ -19,19 +19,20 @@ const config = Platform.select({
   default: {},
 });
 
-// const HomeStack = createStackNavigator(
-//   {
-//     Home: HomeScreen,
-//   },
-//   config
-// );
-
 const HistoryStack = createStackNavigator(
   {
     History: HistoryScreen,
     InspectionSummary: InspectionSummaryScreen
-  }
+  },
+  config
 )
+
+HistoryStack.navigationOptions = {
+  tabBarLabel: "Inspections",
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name="folder1" type="antdesign" />
+  )
+}
 
 const ProfileStack = createStackNavigator(
   {
@@ -39,59 +40,23 @@ const ProfileStack = createStackNavigator(
   }
 )
 
+ProfileStack.navigationOptions = {
+  tabBarLabel: "Account",
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name="user" type="antdesign" />
+  )
+}
+
 const NewInspectionStack = createStackNavigator(
   {
     Templates: TemplatesScreen
-  }
+  }, 
 )
-
-// HomeStack.navigationOptions = {
-//   tabBarLabel: 'Home',
-//   tabBarIcon: ({ focused }) => (
-//     <TabBarIcon
-//       focused={focused}
-//       name={
-//         Platform.OS === 'ios'
-//           ? `ios-information-circle${focused ? '' : '-outline'}`
-//           : 'md-information-circle'
-//       }
-//     />
-//   ),
-// };
-
-// HomeStack.path = '';
-
-// const LinksStack = createStackNavigator(
-//   {
-//     Links: LinksScreen,
-//   },
-//   config
-// );
-
-// LinksStack.navigationOptions = {
-//   tabBarLabel: 'Links',
-//   tabBarIcon: ({ focused }) => (
-//     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
-//   ),
-// };
-
-// LinksStack.path = '';
-
-// const SettingsStack = createStackNavigator(
-//   {
-//     Settings: SettingsScreen,
-//   },
-//   config
-// );
-
-// SettingsStack.navigationOptions = {
-//   tabBarLabel: 'Settings',
-//   tabBarIcon: ({ focused }) => (
-//     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
-//   ),
-// };
-
-// SettingsStack.path = '';
+NewInspectionStack.navigationOptions = {
+  tabBarLabel: "New",
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name="addfile" type="antdesign" />)
+}
 
 const tabNavigator = createBottomTabNavigator({
   HistoryStack,
@@ -99,6 +64,6 @@ const tabNavigator = createBottomTabNavigator({
   ProfileStack
 });
 
-// tabNavigator.path = '';
+
 
 export default tabNavigator;
