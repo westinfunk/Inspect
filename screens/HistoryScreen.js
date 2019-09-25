@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, ScrollView, Text } from 'react-native';
 import { Header, SearchBar, ListItem } from 'react-native-elements';
 import { getInspections } from '../model/Inspection';
+import { header } from '../constants/Styles';
 
 const HistoryHeader = props => <Header
     centerComponent={{ text: 'History', style: { color: '#fff' } }}
@@ -15,6 +16,11 @@ const HistorySearch = props =>  <SearchBar
 />
 
 export default class HistoryScreen extends Component {
+    static navigationOptions = {
+        title: "Inspections",
+        ...header
+    }
+
     state = {
         isLoading: true,
         search: "",
@@ -37,16 +43,17 @@ export default class HistoryScreen extends Component {
         this.setState({ search })
     }
 
-    navToInspectionSummary = (id)=> {
+    navToInspectionSummary = (inspection)=> {
+        const navigator = this.props.navigation;
         return function(){
-            console.log(id)
+            console.log(inspection)
+            navigator.navigate('InspectionSummary', { inspection });
         }
     }
         
     render() {
         return (
             <View>
-                <HistoryHeader />
                 <HistorySearch onChangeText={this.updateSearch} value={ this.state.search }/>
                 <ScrollView>
                     {this.state.inspections.map((inspection, key) => 
@@ -55,7 +62,7 @@ export default class HistoryScreen extends Component {
                         leftIcon={{ name: "home"}}
                         title={inspection.address}
                         subtitle={inspection.city}
-                        onPress={this.navToInspectionSummary(inspection.id)}
+                        onPress={this.navToInspectionSummary(inspection)}
                         />)}
                 </ScrollView>
             </View>

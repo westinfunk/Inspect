@@ -8,5 +8,15 @@ export default StyleSheet.create({
     },
     buttonLarge: {
         marginTop: 30
-    }
+    },
 })
+
+export const header = {
+    // headerStyle: {
+    //     backgroundColor: '#c3d94a',
+    // },
+    // headerTintColor: '#fff',
+    // headerTitleStyle: {
+    //   fontWeight: 'bold',
+    // },
+}

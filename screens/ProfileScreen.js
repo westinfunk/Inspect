@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
-import { Header } from 'react-native-elements';
+import { ScrollView } from 'react-native';
+import { Text } from 'react-native-elements';
+import { header } from '../constants/Styles';
 
 export default class ProfileScreen extends Component {
+    static navigationOptions = {
+        title: "Account",
+        ...header
+    }
+
     render() {
         return (
-            <Header>
-                Profile Screen
-            </Header>
+            <ScrollView>
+                <Text>
+                    Profile
+                </Text>
+            </ScrollView>
         )
     }
 }
