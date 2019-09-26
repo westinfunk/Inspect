@@ -4,10 +4,6 @@ import { Header, SearchBar, ListItem } from 'react-native-elements';
 import { getInspections } from '../model/Inspection';
 import { header } from '../constants/Styles';
 
-const HistoryHeader = props => <Header
-    centerComponent={{ text: 'History', style: { color: '#fff' } }}
-    rightComponent={{ icon: 'add-circle', color: '#fff' }}
-/>
 
 const HistorySearch = props =>  <SearchBar 
     placeholder="Search..." 

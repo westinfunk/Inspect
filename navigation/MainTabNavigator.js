@@ -7,6 +7,8 @@ import HistoryScreen from '../screens/HistoryScreen';
 import InspectionSummaryScreen from '../screens/InspectionSummaryScreen';
 
 import TemplatesScreen from '../screens/TemplatesScreen';
+import TemplatePreviewScreen from '../screens/TemplatePreviewScreen';
+
 import ProfileScreen from '../screens/ProfileScreen';
 
 
@@ -46,7 +48,8 @@ ProfileStack.navigationOptions = {
 
 const NewInspectionStack = createStackNavigator(
   {
-    Templates: TemplatesScreen
+    Templates: TemplatesScreen,
+    TemplatePreview: TemplatePreviewScreen
   },
   config 
 )
