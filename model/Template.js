@@ -11,10 +11,13 @@ export const getTemplate = async function (id) {
     }
 }
 
+
+
 const templates = [
     {
         id: 9832,
         title: "Template A",
+        lastUsed: timestamp,
         categories: [
             {
                 title: "Roof",

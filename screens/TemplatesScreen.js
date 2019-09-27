@@ -45,7 +45,7 @@ export default class TemplatesScreen extends Component {
                         bottomDivider 
                     /> 
                 )}
-                <Button title="Add Template" style={{ marginTop: 20 }} type="outline"></Button>
+                <Button title="Create New Template" style={{ marginTop: 20 }} type="outline"></Button>
             </ScrollView>
         )
     }
