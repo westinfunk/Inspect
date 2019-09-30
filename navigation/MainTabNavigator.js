@@ -10,6 +10,7 @@ import TemplatesScreen from '../screens/TemplatesScreen';
 import TemplatePreviewScreen from '../screens/TemplatePreviewScreen';
 
 import ProfileScreen from '../screens/ProfileScreen';
+import EditProfileScreen from '../screens/EditProfileScreen';
 
 
 const config = Platform.select({
@@ -34,7 +35,8 @@ HistoryStack.navigationOptions = {
 
 const ProfileStack = createStackNavigator(
   {
-    Profile: ProfileScreen
+    Profile: ProfileScreen,
+    EditProfile: EditProfileScreen
   },
   config
 )

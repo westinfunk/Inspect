@@ -6,10 +6,16 @@ import { getAccount } from '../model/Account';
 import EditHeaderButton from '../components/EditHeaderButton';
 
 export default class ProfileScreen extends Component {
-    static navigationOptions = {
-        headerTitle: "Account",
-        headerRight: <EditHeaderButton onPress={()=>console.log("pressed")} />,
-        ...header
+
+    static navigationOptions = ({ navigation }) => {
+        return {
+            headerTitle: "Account",
+            headerRight: (<EditHeaderButton onPress={() => navigation.navigate({ routeName: "EditProfile"})}/>)
+        }
+    }
+
+    constructor(props) {
+        super(props);
     }
 
     state = {
@@ -20,6 +26,11 @@ export default class ProfileScreen extends Component {
         const accountId = 328;
         const account = await getAccount(accountId);
         this.setState({ account });
+    }
+
+    navToEditProfileScreen() {
+        console.log("pressed");
+        this.props.navigation.navigate({ routeName: "EditProfile"});
     }
 
     renderCard() {

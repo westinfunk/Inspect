@@ -17,7 +17,7 @@ const templates = [
     {
         id: 9832,
         title: "Template A",
-        lastUsed: timestamp,
+        lastUsed: Date.now(),
         categories: [
             {
                 title: "Roof",
