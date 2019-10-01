@@ -18,6 +18,7 @@ const inspections = [
         summary: "This is a summarry of the inspection",
         inspectorName: "Todd P",
         clientName: "Jefferson Anders",
+        photos: [],
         categories: [
             {
                 name: "Roof",

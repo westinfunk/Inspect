@@ -11,6 +11,27 @@ export const getTemplate = async function (id) {
     }
 }
 
+export const initializeTemplate = async function(title) {
+    const templateExists = templates.filter(template => template.title == title).length > 0;
+    if (templateExists) {
+        throw new Error("A template already exists with that title");
+    } else {
+        const id = await generateTemplateId(title);
+        const template = {
+            id,
+            title,
+            lastUsed: Date.now(),
+            categories: []
+        }
+        templates.push(template);
+        return id;
+    }
+}
+
+export const generateTemplateId = async function(title) {
+    return Math.ceil(Math.random() * 100000);
+}
+
 
 
 const templates = [
@@ -18,6 +39,17 @@ const templates = [
         id: 9832,
         title: "Template A",
         lastUsed: Date.now(),
+        information: {
+            address: "",
+            city: "",
+            state: "",
+            zip: "",
+            temperature: "",
+            timeStart: "",
+            timeEnd: "",
+            clientName: "",
+            summary: ""
+        },
         categories: [
             {
                 title: "Roof",

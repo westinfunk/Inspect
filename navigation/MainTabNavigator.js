@@ -8,9 +8,11 @@ import InspectionSummaryScreen from '../screens/InspectionSummaryScreen';
 
 import TemplatesScreen from '../screens/TemplatesScreen';
 import TemplatePreviewScreen from '../screens/TemplatePreviewScreen';
+import EditTemplateScreen from '../screens/EditTemplateScreen';
 
 import ProfileScreen from '../screens/ProfileScreen';
 import EditProfileScreen from '../screens/EditProfileScreen';
+import CreateTemplateScreen from '../screens/CreateTemplateScreen';
 
 
 const config = Platform.select({
@@ -51,7 +53,9 @@ ProfileStack.navigationOptions = {
 const NewInspectionStack = createStackNavigator(
   {
     Templates: TemplatesScreen,
-    TemplatePreview: TemplatePreviewScreen
+    TemplatePreview: TemplatePreviewScreen,
+    CreateTemplate: CreateTemplateScreen,
+    EditTemplate: EditTemplateScreen
   },
   config 
 )
