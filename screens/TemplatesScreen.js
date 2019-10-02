@@ -19,6 +19,9 @@ export default class TemplatesScreen extends Component {
         this.setState({
             templates
         })
+        this.props.navigation.addListener('didFocus', payload => {
+            this.refresh();
+        })
     }
 
     navToTemplatePreview(id, title) {
@@ -38,8 +41,7 @@ export default class TemplatesScreen extends Component {
     async refresh() {
         const templates = await getTemplates();
         this.setState({
-            templates,
-            unrefreshed: false
+            templates
         })
         console.log("refreshing");
     }

@@ -9,6 +9,7 @@ import InspectionSummaryScreen from '../screens/InspectionSummaryScreen';
 import TemplatesScreen from '../screens/TemplatesScreen';
 import TemplatePreviewScreen from '../screens/TemplatePreviewScreen';
 import EditTemplateScreen from '../screens/EditTemplateScreen';
+import TemplateCategoryScreen from '../screens/TemplateCategoryScreen';
 
 import ProfileScreen from '../screens/ProfileScreen';
 import EditProfileScreen from '../screens/EditProfileScreen';
@@ -55,7 +56,8 @@ const NewInspectionStack = createStackNavigator(
     Templates: TemplatesScreen,
     TemplatePreview: TemplatePreviewScreen,
     CreateTemplate: CreateTemplateScreen,
-    EditTemplate: EditTemplateScreen
+    EditTemplate: EditTemplateScreen,
+    TemplateCategory: TemplateCategoryScreen
   },
   config 
 )

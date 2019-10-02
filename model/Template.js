@@ -52,8 +52,10 @@ const templates = [
         },
         categories: [
             {
+                id: 390832,
                 title: "Roof",
                 subcategories: [{
+                        id: 9827343,
                         title: "Covering",
                         params: [{
                             title: "Material",
@@ -66,6 +68,7 @@ const templates = [
                 ]
             },
             {
+                id: 390833,
                 title: "Exterior",
                 subcategories: [{
                     title: "Driveway"
@@ -76,18 +79,21 @@ const templates = [
                 }]
             },
             {
+                id: 390834,
                 title: "Attic",
                 subcategories: [{
                     title: "Framing"
                 }]
             },
             {
+                id: 390835,
                 title: "Garage",
                 subcategories: [{
                     title: "Garage Door"
                 }]
             },
             {
+                id: 390836,
                 title: "Kitchen",
                 subcategories: [{
                     title: "Appliances"
@@ -103,6 +109,7 @@ const templates = [
     title: "Template B",
     categories: [
         {
+            id: 12093874,
             title: "Roof",
             subcategories: [{
                     title: "Covering",
@@ -114,43 +121,56 @@ const templates = [
             ]
         },
         {
+            id: 73891236,
             title: "Exterior",
             subcategories: [{
+                id: 390801,
                 title: "Driveway"
             }, {
+                id: 390802,
                 title: "Sidewalk"
             }, {
+                id: 390803,
                 title: "Patio"
             }]
         },
         {
             title: "Attic",
             subcategories: [{
+                id: 390878,
                 title: "Framing"
+
             }]
         },
         {
+            id: 2674382,
             title: "Garage",
             subcategories: [{
+                id: 390877,
                 title: "Garage Door"
             }]
         },
         {
+            id: 27477743,
             title: "Kitchen",
             subcategories: [{
+                id: 390876,
                 title: "Appliances"
             }, {
+                id: 390875,
                 title: "Sink"
             }, {
+                id: 390874,
                 title: "Counter"
             }]
         }
     ]
     }, {
-    id: 83029,
+    id: 83021,
     title: "Template C",
     categories: [
         {
+            id: 9877732,
             title: "Roof",
             subcategories: [{
                     title: "Covering",
@@ -162,34 +182,47 @@ const templates = [
             ]
         },
         {
+            id: 1277322,
             title: "Exterior",
             subcategories: [{
+                id: 390861,
                 title: "Driveway"
             }, {
+                id: 390862,
                 title: "Sidewalk"
             }, {
+                id: 390863,
                 title: "Patio"
             }]
         },
         {
+            id: 4839177,
             title: "Attic",
             subcategories: [{
+                id: 390864,
                 title: "Framing"
+
             }]
         },
         {
+            id: 47392342,
             title: "Garage",
             subcategories: [{
+                id: 390851,
                 title: "Garage Door"
             }]
         },
         {
+            id: 4738234,
             title: "Kitchen",
             subcategories: [{
+                id: 390852,
                 title: "Appliances"
             }, {
+                id: 390853,
                 title: "Sink"
             }, {
+                id: 390854,
                 title: "Counter"
             }]
         }
@@ -230,10 +263,12 @@ const Inspection = {
     inspection: {
         categories: [
             {
+                id: "",
                 title: "",
                 description: "",
                 subcategories: [
                     {
+                        id: "",
                         title: "",
                         status: ["Not present", "Inspected", "Replace/Repair"],
                         notes: [""],

@@ -24,11 +24,30 @@ export default class TemplatePreview extends Component {
         this.setState({ template });
     }
 
+
+
+    navToCategory(id, title) {
+        const navigation = this.props.navigation;
+        const templateId = navigation.getParam('id');
+        return function() {
+            navigation.navigate("TemplateCategory", {
+                title,
+                templateId,
+                categoryId: id
+            })
+        }
+    }
+
     renderTemplate() {
         const template = this.state.template;
         if (template) {
             return ( 
-             template.categories.map((category, key) => <ListItem key={key} title={category.title} /> )
+             template.categories.map((category, key) => 
+             <ListItem 
+                key={key} 
+                title={category.title} 
+                onPress={this.navToCategory(category.id, category.title).bind(this)}
+            /> )
             )
         } else {
             return null
